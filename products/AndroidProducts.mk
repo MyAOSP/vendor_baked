@@ -9,6 +9,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/d2usc.mk \
     $(LOCAL_DIR)/d2vzw.mk \
     $(LOCAL_DIR)/endeavoru.mk \
+    $(LOCAL_DIR)/evita.mk \
     $(LOCAL_DIR)/fascinatemtd.mk \
     $(LOCAL_DIR)/galaxysmtd.mk \
     $(LOCAL_DIR)/i9100.mk \
