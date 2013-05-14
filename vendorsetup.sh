@@ -14,6 +14,7 @@ add_lunch_combo baked_d2tmo-userdebug
 add_lunch_combo baked_d2usc-userdebug
 add_lunch_combo baked_d2vzw-userdebug
 add_lunch_combo baked_endeavoru-userdebug
+add_lunch_combo baked_evita-userdebug
 add_lunch_combo baked_fascinatemtd-userdebug
 add_lunch_combo baked_galaxysmtd-userdebug
 add_lunch_combo baked_i9100-userdebug
