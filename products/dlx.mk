@@ -5,7 +5,7 @@ $(call inherit-product, vendor/baked/configs/cdma.mk)
 $(call inherit-product, vendor/baked/configs/common_full.mk)
 
 # Inherit device configuration for dlx
-$(call inherit-product, device/htc/dlx/device_dlx.mk)
+$(call inherit-product, device/htc/dlx/full_dlx.mk)
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/baked/overlay/dlx
 
