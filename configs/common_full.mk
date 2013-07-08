@@ -18,6 +18,7 @@ PRODUCT_PACKAGES += \
     Galaxy4 \
     LiveWallpapers \
     LiveWallpapersPicker \
+    SunBeam \
     VisualizationWallpapers \
     PhaseBeam
 
