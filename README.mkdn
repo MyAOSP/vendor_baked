@@ -1,36 +1,28 @@
-BakedRom
-===========
+<h1>BakedRom</h1>
 
+<h2>Getting Started</h2>
+<h3>Android 4.4 KitKat</h3>
+<p>Please see the Android source page for building instructions. Visit this <a href=http://source.android.com/source/building.html>page</a> for more info.
+To initialize your local repository using our repos, use the following command:</p>
+<pre><code>repo init -u https://github.com/TeamBAKED/platform_manifest.git -b kk-4.4
+</code></pre>
+<p>Then use this:</p>
+<pre><code>repo sync</code></pre>
+<h2>Building</h2>
+<p>While syncing we suggest you read the instructions from the Android site or any other how-to on how to build. After the sync finishes we can build with a few easy commands</p>
+<h4>aosp way:</h4>
+<p>Intialize the build enviroment</p>
+<pre><code>. build/envsetup.sh</code></pre>
+<p>Use to get list of available devices</p>
+<pre><code>lunch</code></pre>
+<p>Then to build</p>
+<pre><code>make otapackage</code></pre>
+<p>This produces a flashable zip</p>
+<h4>Or building the CM way:</h4>
+<pre><code>mka bacon</code></pre>
+<p>This will compile everything and use the correct "-j#" flag and produce a flashable zip file</p>
 
-Getting Started
----------------
-
-Android 4.4 KitKat
-
-Please see the Android source page for building instructions.
-
-To initialize your local repository using our repos, use the following command:
-
-repo init -u https://github.com/TeamBAKED/platform_manifest.git -b kk-4.4
-Then to sync up:
-
-repo sync
-Building
-
-After the sync is finished, please read the instructions from the Android site on how to build.
-
-Once you've read that, you can build with
-
-mka
-This will compile everything and use the correct "-j#" flag.
-
-You can also build a flashable zip with
-
-the cm way
-"mka bacon"
-
-or the traditional create zip way
-"mka otapackage"
-Special Thanks
-
-To AOKP, Cyanogenmod and peter alfonso for their work in helping make this easier for everyone to get into. Also like to thank Google of course plus the entire android community for without you guys this would be kinda boring!
+<h2>Special Thanks</h2>
+<p>To Google for the open source code obviously. Also to (in no special order) CyanogenMod, AOKP,
+Every other Dev that is contributing, and also to the android communities that keep this open source
+thing going!!!!!!</p>
