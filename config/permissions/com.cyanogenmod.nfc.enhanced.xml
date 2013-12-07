@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<!-- This feature shows that this is CyanogenMod -->
+<!-- This feature shows that this is device features CM NFC enhancements -->
 <permissions>
-    <feature name="com.baked.android" />
+    <feature name="com.cyanogenmod.nfc.enhanced" />
 </permissions>

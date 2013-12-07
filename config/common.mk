@@ -98,7 +98,7 @@ PRODUCT_COPY_FILES += \
 
 # This is baked! Kanged from cm obviously
 PRODUCT_COPY_FILES += \
-    vendor/baked/config/permissions/com.baked.android.xml:system/etc/permissions/com.baked.android.xml
+    vendor/baked/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
 # T-Mobile theme engine
 include vendor/baked/config/themes_common.mk
@@ -129,6 +129,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
+
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
 
 # Extra tools from CM
 PRODUCT_PACKAGES += \
@@ -182,14 +187,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/baked/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/baked/overlay/common
 
-PRODUCT_VERSION_MAJOR = kk-1
+PRODUCT_VERSION_NICK =kk
+PRODUCT_VERSION_MAJOR = 1
 PRODUCT_VERSION_MINOR = 0
 
 # Set the verison
 ifeq ($(PRODUCT_VERSION_MINOR),0)
-    BAKED_VERSION := $(PRODUCT_VERSION_MAJOR)_$(BAKED_BUILD)-$(shell date +"%Y%m%d")
+    BAKED_VERSION := $(PRODUCT_VERSION_NICK)-$(PRODUCT_VERSION_MAJOR)-$(BAKED_BUILD)
 else
-    BAKED_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)_$(BAKED_BUILD)-$(shell date +"%Y%m%d")
+    BAKED_VERSION := $(PRODUCT_VERSION_NICK)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(BAKED_BUILD)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
