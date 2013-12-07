@@ -158,8 +158,6 @@ PRODUCT_PACKAGES += \
     gdbserver \
     micro_bench \
     oprofiled \
-    procmem \
-    procrank \
     sqlite3 \
     strace
 
@@ -177,12 +175,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rsync
 
+# These packages are excluded from user builds
+ifneq ($(TARGET_BUILD_VARIANT),user)
+
 PRODUCT_PACKAGES += \
+    procmem \
+    procrank \
     Superuser \
     su
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
+else
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=0
+
+endif
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
