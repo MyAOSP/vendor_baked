@@ -47,7 +47,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
 
+ifneq ($(TARGET_BUILD_VARIANT),eng)
+# Enable ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+endif
 
 # Future use of this maybe
 # Copy over the changelog to the device
@@ -187,15 +190,30 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/baked/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/baked/overlay/common
 
-PRODUCT_VERSION_NICK =kk
+PRODUCT_VERSION_NICK = kk
 PRODUCT_VERSION_MAJOR = 1
 PRODUCT_VERSION_MINOR = 0
 
-# Set the verison
-ifeq ($(PRODUCT_VERSION_MINOR),0)
-    BAKED_VERSION := $(PRODUCT_VERSION_NICK)-$(PRODUCT_VERSION_MAJOR)-$(BAKED_BUILD)
+# Filter out random types, so it'll reset to UNOFFICIAL
+ifeq ($(filter RELEASE,$(BAKED_BUILDTYPE)),)
+    BAKED_BUILDTYPE :=
+endif
+
+ifeq ($(BAKED_BUILDTYPE), RELEASE)
+    BAKED_BUILDTYPE := RELEASE
 else
+    BAKED_BUILDTYPE := UNOFFICIAL
+endif
+
+# Set the version here
+ifeq ($(BAKED_BUILDTYPE), RELEASE)
     BAKED_VERSION := $(PRODUCT_VERSION_NICK)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(BAKED_BUILD)
+else
+    ifeq ($(PRODUCT_VERSION_MINOR),0)
+        BAKED_VERSION := $(PRODUCT_VERSION_NICK)-$(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(BAKED_BUILDTYPE)-$(BAKED_BUILD)
+    else
+        BAKED_VERSION := $(PRODUCT_VERSION_NICK)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(BAKED_BUILDTYPE)-$(BAKED_BUILD)
+    endif
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
