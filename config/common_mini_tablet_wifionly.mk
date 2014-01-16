@@ -1,9 +1,6 @@
 # Inherit common CM stuff
 $(call inherit-product, vendor/baked/config/common.mk)
 
-# Bring in all audio files
-include frameworks/base/data/sounds/NewAudio.mk
-
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Orion.ogg \
