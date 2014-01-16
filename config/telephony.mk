@@ -10,3 +10,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Mms \
     Stk
+
+# Cell broadcast reciever
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver

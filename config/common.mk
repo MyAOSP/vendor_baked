@@ -137,9 +137,6 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     LockClock
 
-PRODUCT_PACKAGES += \
-    CellBroadcastReceiver
-
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
