@@ -105,6 +105,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/baked/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
+# Include the proprietary lib for gesture typing in LatinIme
+PRODUCT_PACKAGES += \
+    libjni_unbundled_latinimegoogle
+
 # T-Mobile theme engine
 include vendor/baked/config/themes_common.mk
 
