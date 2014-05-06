@@ -14,7 +14,8 @@ PRODUCT_PACKAGES += \
     NoiseField \
     PhaseBeam \
     VisualizationWallpapers \
-    PhotoTable
+    PhotoTable \
+    SoundRecorder
 
 PRODUCT_PACKAGES += \
     VideoEditor \
@@ -23,3 +24,7 @@ PRODUCT_PACKAGES += \
     libvideoeditor_osal \
     libvideoeditor_videofilters \
     libvideoeditorplayer
+
+# Extra tools in CM
+PRODUCT_PACKAGES += \
+    vim
