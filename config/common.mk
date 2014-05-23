@@ -112,16 +112,15 @@ PRODUCT_PACKAGES += \
 
 # Optional packages
 PRODUCT_PACKAGES += \
-    VoiceDialer \
-    SoundRecorder \
     Basic \
+    SoundRecorder \
     libemoji
 
 # Custom packages
     #Trebuchet \
 
 PRODUCT_PACKAGES += \
-    Launcher3 \
+    Trebuchet \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
