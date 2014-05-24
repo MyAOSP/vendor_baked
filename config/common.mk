@@ -134,12 +134,12 @@ PRODUCT_PACKAGES += \
 
 # Extra tools from CM
 PRODUCT_PACKAGES += \
+    libsepol \
     openvpn \
     e2fsck \
     mke2fs \
     tune2fs \
     bash \
-    vim \
     nano \
     htop \
     powertop \
@@ -219,6 +219,10 @@ else
     endif
 endif
 
+# by default, do not update the recovery with system updates
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
+
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.baked.version=$(BAKED_VERSION) \
-  ro.modversion=$(BAKED_VERSION)
+
+-include $(WORKSPACE)/build_env/image-auto-bits.mk
