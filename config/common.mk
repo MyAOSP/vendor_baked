@@ -200,11 +200,13 @@ PRODUCT_VERSION_MAJOR = 1
 PRODUCT_VERSION_MINOR = 0
 
 # Filter out random types, so it'll reset to UNOFFICIAL
+$(call inherit-product-if-exists, vendor/baked/release.mk)
+
 ifeq ($(filter RELEASE,$(BAKED_BUILDTYPE)),)
     BAKED_BUILDTYPE :=
 endif
 
-ifeq ($(BAKED_BUILDTYPE), RELEASE)
+ifneq ($(BAKED_BUILDTYPE), RELEASE)
     BAKED_BUILDTYPE := RELEASE
 else
     BAKED_BUILDTYPE := UNOFFICIAL
@@ -226,4 +228,3 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.baked.version=$(BAKED_VERSION) \
-
